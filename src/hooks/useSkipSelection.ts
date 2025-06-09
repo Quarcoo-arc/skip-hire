@@ -33,3 +33,5 @@ const useSkipSelection = () => {
 };
 
 export default useSkipSelection;
+
+export type UseSkipSelectionReturnType = ReturnType<typeof useSkipSelection>;
