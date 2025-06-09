@@ -65,7 +65,7 @@ const SkipCard = ({
                 Road Placement
               </Badge>
             )}
-            {skip.allow_heavy_waste && (
+            {skip.allows_heavy_waste && (
               <Badge variant="info" className="text-xs">
                 Heavy Waste OK
               </Badge>

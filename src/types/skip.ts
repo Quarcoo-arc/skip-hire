@@ -12,5 +12,5 @@ export type SkipData = {
   created_at: string;
   updated_at: string;
   allowed_on_road: boolean;
-  allow_heavy_waste: boolean;
+  allows_heavy_waste: boolean;
 };
