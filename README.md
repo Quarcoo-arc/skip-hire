@@ -23,7 +23,7 @@ src/
 ├── utils/ # Utility functions
 ├── App.tsx # Root component
 ├── main.tsx # App entry point
-└── index.css # TailwindCSS configuration
+└── index.css # Global stylesheet
 ```
 
 ## 🚀 Getting Started
