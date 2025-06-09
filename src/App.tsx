@@ -7,19 +7,13 @@ import {
 } from "./components/layout/ProgressIndicator";
 import { Button } from "./components/ui";
 import { STEPS } from "./constants";
-import { useSkips, useSkipSelection } from "./hooks";
+import { useSkips, useSkipSelection, useStep } from "./hooks";
 
 const App = () => {
   const actionButtons = useRef<HTMLDivElement | null>(null);
   const { skips, loading, error } = useSkips("NR32", "Lowestoft");
-  const {
-    selectedSkip,
-    currentStep,
-    selectSkip,
-    prevStep,
-    nextStep,
-    selectStep,
-  } = useSkipSelection();
+  const { selectedSkip, selectSkip } = useSkipSelection();
+  const { prevStep, nextStep, selectStep, currentStep } = useStep();
 
   useEffect(() => {
     if (selectedSkip && actionButtons.current) {
