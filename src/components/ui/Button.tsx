@@ -17,7 +17,7 @@ const Button = ({
   ...props
 }: IProps) => {
   const baseClasses =
-    "font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 touch-manipulation";
+    "font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 touch-manipulation cursor-pointer";
 
   const variants = {
     primary:

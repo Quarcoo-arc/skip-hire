@@ -10,7 +10,7 @@ const useSkipSelection = () => {
   };
 
   const nextStep = () => {
-    setCurrentStep((p) => p + 1);
+    setCurrentStep((p) => Math.min(p + 1, 5));
   };
 
   const prevStep = () => {

@@ -4,10 +4,7 @@ import type { Step } from "../../types";
 interface IProps {
   steps: Step[];
   currentStep: number;
-}
-
-interface IIProps extends IProps {
-  onStepClick: () => void;
+  onStepClick?: () => void;
 }
 
 interface IVerticalProgressIndicatorProps extends IProps {
@@ -16,11 +13,7 @@ interface IVerticalProgressIndicatorProps extends IProps {
   compact: boolean;
 }
 
-export const StickyMobileProgress = ({
-  steps,
-  currentStep,
-  onStepClick,
-}: IIProps) => {
+export const StickyMobileProgress = ({ steps, currentStep }: IProps) => {
   const [showDetails, setShowDetails] = useState(false);
   const currentStepData = steps[currentStep];
   const progressPercentage = ((currentStep + 1) / steps.length) * 100;

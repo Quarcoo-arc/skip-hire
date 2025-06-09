@@ -104,8 +104,7 @@ const SkipCard = ({
           <Button
             variant={isSelected ? "primary" : "outline"}
             size="sm"
-            className="w-full font-semibold text-sm sm:text-base"
-            onClick={() => onSelect(skip)}
+            className="w-full font-semibold text-sm sm:text-base cursor-pointer"
           >
             {isSelected ? (
               <span className="flex items-center justify-center">
