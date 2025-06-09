@@ -1,3 +1,4 @@
+import { SkipGrid } from "./components/features";
 import { Header } from "./components/layout";
 import {
   StickyMobileProgress,
@@ -58,6 +59,13 @@ const App = () => {
             <Header
               title="Choose Your Skip Size"
               subtitle="Select the skip size that best suits your needs"
+            />
+
+            <SkipGrid
+              skips={skips}
+              selectedSkip={selectedSkip}
+              onSkipSelect={selectSkip}
+              loading={loading}
             />
           </div>
         </div>
