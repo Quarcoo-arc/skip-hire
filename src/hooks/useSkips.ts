@@ -11,6 +11,7 @@ const useSkips = (postcode: string, area: string) => {
     const fetchSkips = async () => {
       try {
         setLoading(true);
+        setError(null);
         const response = await fetch(
           `${BASE_API}/api/skips/by-location?postcode=${postcode}&area=${area}`
         );
