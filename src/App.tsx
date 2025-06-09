@@ -1,5 +1,5 @@
 import { SkipGrid } from "./components/features";
-import { Header } from "./components/layout";
+import { Header, Sidebar } from "./components/layout";
 import {
   StickyMobileProgress,
   VerticalProgressIndicator,
@@ -36,22 +36,18 @@ const App = () => {
 
       <div className="flex">
         {/* Desktop Sidebar */}
-        <div className="hidden lg:flex lg:flex-shrink-0">
-          <div className="w-80 bg-white shadow-lg border-r border-gray-200 h-screen overflow-y-auto">
-            <div className="p-6 xl:p-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-8">
-                Your Progress
-              </h2>
+        <Sidebar>
+          <h2 className="text-xl font-bold text-gray-900 mb-8">
+            Your Progress
+          </h2>
 
-              <VerticalProgressIndicator
-                steps={STEPS}
-                currentStep={currentStep}
-                showLabels={true}
-                compact={false}
-              />
-            </div>
-          </div>
-        </div>
+          <VerticalProgressIndicator
+            steps={STEPS}
+            currentStep={currentStep}
+            showLabels={true}
+            compact={false}
+          />
+        </Sidebar>
 
         {/* Main Content */}
         <div className="flex-1 flex flex-col lg:h-screen lg:overflow-hidden">

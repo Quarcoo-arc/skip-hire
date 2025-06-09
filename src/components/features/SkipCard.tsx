@@ -24,6 +24,7 @@ const SkipCard = ({
       hover={true}
       selected={isSelected}
       className="group h-full flex flex-col overflow-hidden"
+      onClick={() => onSelect(skip)}
     >
       <div className="h-32 md:h-48 w-full relative bg-black/30">
         <img

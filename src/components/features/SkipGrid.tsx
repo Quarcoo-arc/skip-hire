@@ -18,7 +18,7 @@ const images = [img1, img2, img3, img4, img5];
 const SkipGrid = ({ skips, selectedSkip, onSkipSelect, loading }: IProps) => {
   if (loading) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {[...Array(6)].map((_, index) => (
           <div
             key={index}
