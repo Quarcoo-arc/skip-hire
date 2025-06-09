@@ -53,7 +53,7 @@ const SkipCard = ({
         </div>
         {/* Skip Size Header - Responsive text */}
 
-        <div className="text-xl sm:text-2xl font-bold text-white top-1/3 left-1/4 absolute">
+        <div className="text-xl sm:text-2xl font-bold text-white bottom-1/2 left-1/2 -translate-x-1/2  absolute">
           {skip.size} Yard Skip
         </div>
 

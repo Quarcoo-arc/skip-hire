@@ -1,54 +1,75 @@
-# React + TypeScript + Vite
+# Skip Hire
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a redesigned version of the **Choose Your Skip Size** page for [We Want Waste](https://wewantwaste.co.uk/), the goal being to revamp the UI/UX of the said page while maintaining its functionality.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend Framework:** React (via Vite)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Testing:** Vitest (unit tests for custom hooks and utility functions)
+- **Tooling:** ESLint, tsconfig
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+src/
+├── assets/ # Static assets
+├── components/ # Reusable UI components
+├── constants/ # Constant values used across the app
+├── hooks/ # Custom React hooks
+├── tests/ # Test configuration files (Vitest)
+├── types/ # TypeScript type definitions
+├── utils/ # Utility functions
+├── App.tsx # Root component
+├── main.tsx # App entry point
+└── index.css # TailwindCSS configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone the repository
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+git clone https://github.com/Quarcoo-arc/skip-hire.git
+cd skip-hire
 ```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
+
+```bash
+npm run dev
+```
+
+### 4. Run tests
+
+```bash
+npm run test
+```
+
+## 🧪 Testing
+
+This project includes unit tests written with Vitest, focusing on:
+
+- [Custom React hooks](/src/hooks)
+- [Utility functions](/src/utils/)
+
+## 📱Responsive Design
+
+The skip selection UI has been designed to adapt gracefully to both desktop and mobile devices using Tailwind's utility classes.
+
+## 🧠 Design Approach
+
+- **Functional Separation**: Code is organized by responsibility (components, hooks, utils, etc.)
+- **Maintainability**: Used TypeScript and consistent typing for safer and cleaner code.
+- **Responsiveness**: Built using Tailwind CSS for mobile-first design.
+
+## 📦 Deployment
+
+A live, testable version of the page is available on [CodeSandbox](https://codesandbox.io/p/github/Quarcoo-arc/skip-hire/main)
