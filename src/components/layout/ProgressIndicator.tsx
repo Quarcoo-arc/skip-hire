@@ -4,7 +4,7 @@ import type { Step } from "../../types";
 interface IProps {
   steps: Step[];
   currentStep: number;
-  onStepClick?: () => void;
+  onStepClick: (id: string) => void;
 }
 
 interface IVerticalProgressIndicatorProps extends IProps {
@@ -13,7 +13,11 @@ interface IVerticalProgressIndicatorProps extends IProps {
   compact: boolean;
 }
 
-export const StickyMobileProgress = ({ steps, currentStep }: IProps) => {
+export const StickyMobileProgress = ({
+  steps,
+  currentStep,
+  onStepClick,
+}: IProps) => {
   const [showDetails, setShowDetails] = useState(false);
   const currentStepData = steps[currentStep];
   const progressPercentage = ((currentStep + 1) / steps.length) * 100;
@@ -44,7 +48,7 @@ export const StickyMobileProgress = ({ steps, currentStep }: IProps) => {
 
             {/* Progress Dots */}
             <div className="flex items-center space-x-1">
-              {steps.map((_, index) => (
+              {steps.map((step, index) => (
                 <button
                   key={index}
                   className={`w-2 h-2 rounded-full transition-colors ${
@@ -52,7 +56,7 @@ export const StickyMobileProgress = ({ steps, currentStep }: IProps) => {
                       ? "bg-blue-600 cursor-pointer"
                       : "bg-gray-300 cursor-not-allowed"
                   }`}
-                  //   onClick={() => index <= currentStep ? onStepClick() : null}
+                  onClick={() => onStepClick(step.id)}
                 />
               ))}
               <svg
@@ -100,7 +104,7 @@ export const StickyMobileProgress = ({ steps, currentStep }: IProps) => {
                 </h2>
                 <button
                   onClick={() => setShowDetails(false)}
-                  className="p-2 rounded-lg hover:bg-gray-100"
+                  className="p-2 rounded-lg hover:bg-gray-100 cursor-pointer"
                 >
                   <svg
                     className="w-5 h-5"
@@ -128,6 +132,7 @@ export const StickyMobileProgress = ({ steps, currentStep }: IProps) => {
                         ? "cursor-pointer"
                         : "cursor-not-allowed"
                     }`}
+                    onClick={() => onStepClick(step.id)}
                   >
                     <div
                       className={`
@@ -190,6 +195,7 @@ export const VerticalProgressIndicator = ({
   className = "",
   showLabels = true,
   compact = false,
+  onStepClick,
 }: IVerticalProgressIndicatorProps) => {
   return (
     <div className={`flex flex-col ${className ?? ""}`}>
@@ -199,6 +205,7 @@ export const VerticalProgressIndicator = ({
           className={`flex items-start text-left ${
             index <= currentStep ? "cursor-pointer" : "cursor-not-allowed"
           }`}
+          onClick={() => onStepClick(step.id)}
         >
           <div className="flex flex-col items-center">
             <div

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { SkipData } from "../types";
+import { STEPS } from "../constants";
 
 const useSkipSelection = () => {
   const [selectedSkip, setSelectedSkip] = useState<SkipData | null>(null);
@@ -22,9 +23,19 @@ const useSkipSelection = () => {
     setCurrentStep(0);
   };
 
+  const selectStep = (id: string) => {
+    let stepIndex;
+    STEPS.forEach((step, idx) => {
+      if (step.id === id) stepIndex = idx;
+    });
+    if ((!stepIndex && stepIndex !== 0) || stepIndex >= currentStep) return;
+    setCurrentStep(stepIndex);
+  };
+
   return {
     selectedSkip,
     currentStep,
+    selectStep,
     selectSkip,
     nextStep,
     prevStep,

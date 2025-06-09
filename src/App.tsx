@@ -12,8 +12,14 @@ import { useSkips, useSkipSelection } from "./hooks";
 const App = () => {
   const actionButtons = useRef<HTMLDivElement | null>(null);
   const { skips, loading, error } = useSkips("NR32", "Lowestoft");
-  const { selectedSkip, currentStep, selectSkip, prevStep, nextStep } =
-    useSkipSelection();
+  const {
+    selectedSkip,
+    currentStep,
+    selectSkip,
+    prevStep,
+    nextStep,
+    selectStep,
+  } = useSkipSelection();
 
   useEffect(() => {
     if (selectedSkip && actionButtons.current) {
@@ -40,7 +46,7 @@ const App = () => {
       <StickyMobileProgress
         steps={STEPS}
         currentStep={currentStep}
-        onStepClick={() => null}
+        onStepClick={selectStep}
       />
 
       <div className="flex">
@@ -55,6 +61,7 @@ const App = () => {
             currentStep={currentStep}
             showLabels={true}
             compact={false}
+            onStepClick={selectStep}
           />
         </Sidebar>
 
