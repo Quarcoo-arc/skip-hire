@@ -9,8 +9,7 @@ import { useSkips, useSkipSelection } from "./hooks";
 
 const App = () => {
   const { skips, loading, error } = useSkips("NR32", "Lowestoft");
-  const { selectedSkip, currentStep, selectSkip, nextStep, prevStep } =
-    useSkipSelection();
+  const { selectedSkip, currentStep, selectSkip } = useSkipSelection();
 
   if (error) {
     return (

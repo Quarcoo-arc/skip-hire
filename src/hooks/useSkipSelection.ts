@@ -3,10 +3,10 @@ import type { SkipData } from "../types";
 
 const useSkipSelection = () => {
   const [selectedSkip, setSelectedSkip] = useState<SkipData | null>(null);
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(2);
 
   const selectSkip = (skip: SkipData) => {
-    setSelectedSkip(skip);
+    setSelectedSkip((p) => (p?.id === skip?.id ? null : skip));
   };
 
   const nextStep = () => {
